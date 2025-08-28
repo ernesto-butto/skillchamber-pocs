@@ -1,0 +1,1147 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #6619BD, #2B2496);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.header-title p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.notification-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.notification-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #847EFC;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.profile-avatar {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation Tabs */
+.tab-navigation {
+    display: flex;
+    background-color: #F3F3F3;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn i {
+    font-size: 1.2rem;
+}
+
+.tab-btn.active {
+    color: #6619BD;
+    border-bottom-color: #6619BD;
+    background-color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    color: #847EFC;
+    background-color: rgba(132, 126, 252, 0.05);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.content-header h2 {
+    margin: 0;
+    color: #1A1A1A;
+}
+
+/* Buttons */
+.primary-btn {
+    background: linear-gradient(135deg, #6619BD, #2B2496);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 25, 189, 0.3);
+}
+
+.secondary-btn {
+    background: #847EFC;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.secondary-btn:hover {
+    background: #6B6BF7;
+    transform: translateY(-1px);
+}
+
+/* Search */
+.search-container {
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    position: relative;
+    max-width: 400px;
+}
+
+.search-input i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #F3F3F3;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search-input input:focus {
+    outline: none;
+    border-color: #847EFC;
+}
+
+/* Student Cards */
+.student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.student-card {
+    background: white;
+    border: 1px solid #F3F3F3;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.student-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-color: #847EFC;
+}
+
+.student-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.student-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-info {
+    flex: 1;
+}
+
+.student-info h3 {
+    margin: 0 0 0.25rem 0;
+    color: #1A1A1A;
+    font-size: 1rem;
+}
+
+.student-email {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem 0;
+}
+
+.student-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.strength-badge {
+    background: #E8F5E8;
+    color: #2E7D32;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.weakness-badge {
+    background: #FFF3E0;
+    color: #F57C00;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.student-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: none;
+    border: 1px solid #F3F3F3;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background: #F3F3F3;
+}
+
+.remove-btn:hover {
+    background: #FFEBEE;
+    border-color: #F44336;
+    color: #F44336;
+}
+
+.details-btn:hover {
+    background: #E3F2FD;
+    border-color: #2196F3;
+    color: #2196F3;
+}
+
+/* Sub Tabs */
+.sub-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #F3F3F3;
+}
+
+.sub-tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.sub-tab-btn.active {
+    color: #6619BD;
+    border-bottom-color: #6619BD;
+}
+
+.sub-tab-btn:hover:not(.active) {
+    color: #847EFC;
+}
+
+.subtab-content {
+    display: none;
+}
+
+.subtab-content.active {
+    display: block;
+}
+
+/* Blueprint Cards */
+.add-blueprint-btn {
+    margin-bottom: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.blueprint-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.blueprint-card {
+    background: white;
+    border: 1px solid #F3F3F3;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.2s;
+}
+
+.blueprint-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blueprint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.blueprint-header h3 {
+    margin: 0;
+    color: #1A1A1A;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.blueprint-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.blueprint-status.active {
+    background: #E8F5E8;
+    color: #2E7D32;
+}
+
+.blueprint-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.test-btn {
+    background: #847EFC;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.test-btn:hover {
+    background: #6B6BF7;
+    transform: translateY(-1px);
+}
+
+.remix-btn {
+    background: #FFF3E0;
+    color: #F57C00;
+    border: 1px solid #FFE0B2;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.remix-btn:hover {
+    background: #FFE0B2;
+    transform: translateY(-1px);
+}
+
+.disable-btn {
+    background: #F3F3F3;
+    color: #666;
+    border: 1px solid #E0E0E0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.disable-btn:hover {
+    background: #E0E0E0;
+    transform: translateY(-1px);
+}
+
+.blueprint-actions .remove-btn {
+    background: #FFEBEE;
+    color: #F44336;
+    border: 1px solid #FFCDD2;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.blueprint-actions .remove-btn:hover {
+    background: #FFCDD2;
+    transform: translateY(-1px);
+}
+
+.blueprint-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.blueprint-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.learning-goal {
+    background: #F3F2FF;
+    color: #6619BD;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.completion-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* SceneLab */
+.scenelab-container {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #F8F9FA;
+    border-radius: 12px;
+}
+
+.scenelab-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1A1A1A;
+}
+
+.scenelab-header p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.start-scenelab-btn {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+/* Progress Tab */
+.progress-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.progress-section h3 {
+    color: #1A1A1A;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.progress-card {
+    background: white;
+    border: 1px solid #F3F3F3;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.progress-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.strength-items,
+.weakness-items,
+.recommendation-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.strength-item,
+.weakness-item,
+.recommendation-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.strength-item {
+    background: #E8F5E8;
+}
+
+.strength-item i {
+    color: #2E7D32;
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+}
+
+.weakness-item {
+    background: #FFF3E0;
+}
+
+.weakness-item i {
+    color: #F57C00;
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+}
+
+.recommendation-item {
+    background: #F3F2FF;
+}
+
+.recommendation-item i {
+    color: #6619BD;
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #F3F3F3;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #1A1A1A;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background: #F3F3F3;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Chat Modal */
+.chat-modal {
+    max-width: 800px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ai-message .message-avatar {
+    background: linear-gradient(135deg, #6619BD, #2B2496);
+    color: white;
+}
+
+.user-message .message-avatar {
+    background: #F3F3F3;
+    color: #666;
+}
+
+.message-content {
+    flex: 1;
+    background: #F8F9FA;
+    padding: 1rem;
+    border-radius: 12px;
+    border-top-left-radius: 4px;
+}
+
+.user-message .message-content {
+    background: #E3F2FD;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 4px;
+}
+
+.message-content p {
+    margin: 0;
+    color: #1A1A1A;
+    line-height: 1.5;
+}
+
+.chat-input-container {
+    padding: 1rem;
+    border-top: 1px solid #F3F3F3;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #F3F3F3;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: #847EFC;
+}
+
+.voice-btn,
+.send-btn {
+    background: #847EFC;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.voice-btn:hover,
+.send-btn:hover {
+    background: #6B6BF7;
+}
+
+/* Test Modal */
+.test-container {
+    text-align: center;
+}
+
+.test-info {
+    margin-bottom: 2rem;
+}
+
+.test-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.test-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0;
+    }
+    
+    .header-title h1 {
+        font-size: 1rem;
+    }
+    
+    .header-title p {
+        font-size: 0.8rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .student-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .student-actions {
+        align-self: flex-end;
+    }
+    
+    .blueprint-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .blueprint-actions {
+        justify-content: flex-start;
+    }
+    
+    .blueprint-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .test-actions {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+    
+    .chat-modal {
+        height: calc(100vh - 2rem);
+    }
+}
+
+
+
+/* Add Blueprint Modal */
+#add-blueprint-modal .modal-content {
+    width: 90%;
+    max-width: 600px;
+}
+
+#add-blueprint-modal .modal-body {
+    padding: 20px;
+}
+
+#add-blueprint-modal .search-container {
+    margin-bottom: 20px;
+}
+
+#add-blueprint-modal .blueprint-selection-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.blueprint-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blueprint-item:last-child {
+    border-bottom: none;
+}
+
+.blueprint-item:hover {
+    background-color: #f9f9f9;
+}
+
+.blueprint-item h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #1A1A1A;
+}
+
+.blueprint-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.blueprint-item .select-blueprint-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.blueprint-item.selected {
+    background-color: #e0e0f8; /* Lilac */
+    border: 1px solid #847EFC;
+}
+
+.blueprint-item.selected .select-blueprint-btn {
+    background-color: #847EFC;
+    color: white;
+}
+
+
+
+/* Progress Narrative Styles */
+.progress-narrative {
+    background: linear-gradient(135deg, #F8F9FA 0%, #E8F4FD 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #6619BD;
+    margin-bottom: 1rem;
+}
+
+.progress-narrative p {
+    margin: 0;
+    line-height: 1.6;
+    color: #2C3E50;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+
+/* Blueprint Examples Modal Styles */
+.blueprint-details-section {
+    margin-bottom: 2rem;
+}
+
+.blueprint-details-section h4 {
+    color: #6619BD;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.blueprint-overview {
+    background: #F8F9FA;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #6619BD;
+}
+
+.blueprint-overview p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.blueprint-overview strong {
+    color: #6619BD;
+    font-weight: 600;
+}
+
+.examples-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.example-item {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.example-item h5 {
+    color: #1A1A1A;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.example-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.key-phrases {
+    margin-top: 1rem;
+}
+
+.key-phrases strong {
+    color: #6619BD;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.phrases-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.phrase-tag {
+    background: linear-gradient(135deg, #6619BD 0%, #2B2496 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Make blueprint cards clickable */
+.blueprint-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blueprint-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(102, 25, 189, 0.15);
+}
+

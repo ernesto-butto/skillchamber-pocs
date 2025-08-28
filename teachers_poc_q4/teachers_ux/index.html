@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - English Conversation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <button class="back-btn">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <div class="header-title">
+                    <h1>Course Management</h1>
+                    <p>English Conversation</p>
+                </div>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="bi bi-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="profile-avatar">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="scenes">
+                <i class="bi bi-play-circle"></i>
+                <span>Scenes</span>
+            </button>
+            <button class="tab-btn" data-tab="progress">
+                <i class="bi bi-graph-up"></i>
+                <span>Progress</span>
+            </button>
+            <button class="tab-btn" data-tab="students">
+                <i class="bi bi-people"></i>
+                <span>Students</span>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Students Tab -->
+            <div id="students-tab" class="tab-content active">
+                <div class="content-header">
+                    <h2>Students</h2>
+                    <button class="primary-btn">
+                        <i class="bi bi-plus"></i>
+                        Add Student
+                    </button>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-input">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search students..." id="student-search">
+                    </div>
+                </div>
+
+                <div class="student-list">
+                    <div class="student-card" data-student="sarah">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Sarah Johnson">
+                        </div>
+                        <div class="student-info">
+                            <h3>Sarah Johnson</h3>
+                            <p class="student-email">sarah.johnson@example.com</p>
+                            <div class="student-stats">
+                                <span class="stat-item">
+                                    <i class="bi bi-chat-dots"></i>
+                                    15 conversations
+                                </span>
+                                <span class="strength-badge">Pronunciation</span>
+                                <span class="weakness-badge">Past tense</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="action-btn remove-btn">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="action-btn details-btn">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="student-card" data-student="michael">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Michael Chen">
+                        </div>
+                        <div class="student-info">
+                            <h3>Michael Chen</h3>
+                            <p class="student-email">michael.chen@example.com</p>
+                            <div class="student-stats">
+                                <span class="stat-item">
+                                    <i class="bi bi-chat-dots"></i>
+                                    12 conversations
+                                </span>
+                                <span class="strength-badge">Vocabulary</span>
+                                <span class="weakness-badge">Fluency</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="action-btn remove-btn">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="action-btn details-btn">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="student-card" data-student="emma">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emma Davis">
+                        </div>
+                        <div class="student-info">
+                            <h3>Emma Davis</h3>
+                            <p class="student-email">emma.davis@example.com</p>
+                            <div class="student-stats">
+                                <span class="stat-item">
+                                    <i class="bi bi-chat-dots"></i>
+                                    8 conversations
+                                </span>
+                                <span class="strength-badge">Grammar</span>
+                                <span class="weakness-badge">Confidence</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="action-btn remove-btn">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="action-btn details-btn">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenes Tab -->
+            <div id="scenes-tab" class="tab-content active">
+                <div class="content-header">
+                    <h2>Scenes</h2>
+                </div>
+
+                <div class="sub-tabs">
+                    <button class="sub-tab-btn active" data-subtab="active">Active Blueprints</button>
+                    <button class="sub-tab-btn" data-subtab="create">Create New</button>
+                </div>
+
+                <!-- Active Blueprints Sub-tab -->
+                <div id="active-subtab" class="subtab-content active">
+                    <button class="primary-btn add-blueprint-btn">
+                        <i class="bi bi-plus"></i>
+                        Add Blueprint
+                    </button>
+
+                    <div class="blueprint-list">
+                        <div class="blueprint-card" data-blueprint="ordering-cafe">
+                            <div class="blueprint-header">
+                                <h3>Past Tense Questions & Polite Requests</h3>
+                                <div class="blueprint-status active">Active</div>
+                            </div>
+                            <div class="blueprint-actions">
+                                <button class="action-btn test-btn">
+                                    <i class="bi bi-play"></i>
+                                    Test
+                                </button>
+                                <button class="action-btn remix-btn">
+                                    <i class="bi bi-pencil"></i>
+                                    Remix
+                                </button>
+                                <button class="action-btn disable-btn">
+                                    <i class="bi bi-pause"></i>
+                                    Disable
+                                </button>
+                                <button class="action-btn remove-btn">
+                                    <i class="bi bi-trash"></i>
+                                    Remove
+                                </button>
+                            </div>
+                            <p class="blueprint-description">Students practice using past tense questions and polite request forms in conversational contexts</p>
+                            <div class="blueprint-meta">
+                                <span class="learning-goal">Key Skills: Past tense formation, polite language, question structures</span>
+                                <div class="completion-stats">
+                                    <i class="bi bi-people"></i>
+                                    <span>12 students completed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blueprint-card" data-blueprint="formal-register">
+                            <div class="blueprint-header">
+                                <h3>Formal Register & Problem-Solving Language</h3>
+                                <div class="blueprint-status active">Active</div>
+                            </div>
+                            <div class="blueprint-actions">
+                                <button class="action-btn test-btn">
+                                    <i class="bi bi-play"></i>
+                                    Test
+                                </button>
+                                <button class="action-btn remix-btn">
+                                    <i class="bi bi-pencil"></i>
+                                    Remix
+                                </button>
+                                <button class="action-btn disable-btn">
+                                    <i class="bi bi-pause"></i>
+                                    Disable
+                                </button>
+                                <button class="action-btn remove-btn">
+                                    <i class="bi bi-trash"></i>
+                                    Remove
+                                </button>
+                            </div>
+                            <p class="blueprint-description">Students learn to use formal language structures and develop problem-solving communication skills</p>
+                            <div class="blueprint-meta">
+                                <span class="learning-goal">Key Skills: Formal language, complaint handling, professional communication</span>
+                                <div class="completion-stats">
+                                    <i class="bi bi-people"></i>
+                                    <span>8 students completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Create New Sub-tab -->
+                <div id="create-subtab" class="subtab-content">
+                    <div class="scenelab-container">
+                        <div class="scenelab-header">
+                            <h3>SceneLab - Create Blueprint</h3>
+                            <p>Chat with Lu, your AI co-designer, to create a new conversation scenario</p>
+                        </div>
+                        <button class="primary-btn start-scenelab-btn">
+                            <i class="bi bi-robot"></i>
+                            Start Conversation with Lu
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Tab -->
+            <div id="progress-tab" class="tab-content">
+                <div class="content-header">
+                    <h2>Progress Overview</h2>
+                </div>
+
+                <div class="progress-content">
+                    <div class="progress-section">
+                        <h3>Class Strengths</h3>
+                        <div class="progress-card">
+                            <p>The class demonstrates strong performance in vocabulary acquisition and basic grammar structures. Students show confidence in familiar conversation topics and are making good progress with pronunciation of common words and phrases. Most students can successfully initiate and maintain simple conversations about daily activities.</p>
+                            
+                            <div class="strength-items">
+                                <div class="strength-item">
+                                    <i class="bi bi-check-circle"></i>
+                                    <div>
+                                        <strong>Vocabulary:</strong> Students have mastered essential everyday vocabulary and can use new words appropriately in context.
+                                    </div>
+                                </div>
+                                <div class="strength-item">
+                                    <i class="bi bi-check-circle"></i>
+                                    <div>
+                                        <strong>Pronunciation:</strong> Clear improvement in pronunciation of common sounds and word stress patterns.
+                                    </div>
+                                </div>
+                                <div class="strength-item">
+                                    <i class="bi bi-check-circle"></i>
+                                    <div>
+                                        <strong>Listening Comprehension:</strong> Good ability to understand simple conversations and follow basic instructions.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <h3>Areas for Improvement</h3>
+                        <div class="progress-card">
+                            <p>The class needs focused attention on complex grammar structures, particularly past tense forms and conditional statements. Students struggle with fluency when discussing unfamiliar topics and need more practice with formal register and polite expressions.</p>
+                            
+                            <div class="weakness-items">
+                                <div class="weakness-item">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    <div>
+                                        <strong>Past Tense Usage:</strong> Inconsistent use of past tense forms, especially irregular verbs.
+                                    </div>
+                                </div>
+                                <div class="weakness-item">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    <div>
+                                        <strong>Fluency:</strong> Hesitation and long pauses when speaking about complex topics.
+                                    </div>
+                                </div>
+                                <div class="weakness-item">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    <div>
+                                        <strong>Formal Register:</strong> Difficulty switching between casual and formal language appropriately.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <h3>Recommendations</h3>
+                        <div class="progress-card">
+                            <div class="recommendation-items">
+                                <div class="recommendation-item">
+                                    <i class="bi bi-lightbulb"></i>
+                                    <div>
+                                        Increase practice with past tense scenarios, focusing on irregular verb forms through role-play activities
+                                    </div>
+                                </div>
+                                <div class="recommendation-item">
+                                    <i class="bi bi-lightbulb"></i>
+                                    <div>
+                                        Implement fluency-building exercises with timed speaking activities on familiar topics
+                                    </div>
+                                </div>
+                                <div class="recommendation-item">
+                                    <i class="bi bi-lightbulb"></i>
+                                    <div>
+                                        Introduce formal language patterns through business and academic conversation scenarios
+                                    </div>
+                                </div>
+                                <div class="recommendation-item">
+                                    <i class="bi bi-lightbulb"></i>
+                                    <div>
+                                        Schedule individual feedback sessions to address specific pronunciation challenges
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Student Detail Modal -->
+        <div id="student-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-student-name">Student Details</h3>
+                    <button class="close-btn">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-student-details">
+                    <!-- Student details will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SceneLab Modal -->
+        <div id="scenelab-modal" class="modal">
+            <div class="modal-content chat-modal">
+                <div class="modal-header">
+                    <h3>SceneLab - Create Blueprint</h3>
+                    <button class="close-btn">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <i class="bi bi-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Hi! I'm Lu, your AI co-designer. Let's create an amazing language learning scenario together! To get started, I'll need five key pieces of information from you: Title, Learning Goals, Key Concepts, Constraints, and any Additional Context. What specific goal or skill should learners practice in this blueprint? For example: past tense questions, polite requests, formal register, or problem-solving language?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <div class="chat-input">
+                            <input type="text" placeholder="Type your message..." id="chat-input">
+                            <button class="voice-btn">
+                                <i class="bi bi-mic"></i>
+                            </button>
+                            <button class="send-btn" id="send-message">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Blueprint Modal -->
+        <div id="test-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="test-blueprint-title">Test Blueprint</h3>
+                    <button class="close-btn">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="test-container">
+                        <div class="test-info">
+                            <p>You are about to test this blueprint as a student would experience it. This will help you understand the flow and identify any improvements needed.</p>
+                        </div>
+                        <div class="test-actions">
+                            <button class="primary-btn start-test-btn">
+                                <i class="bi bi-play-circle"></i>
+                                Start Test Session
+                            </button>
+                            <button class="secondary-btn preview-btn">
+                                <i class="bi bi-eye"></i>
+                                Preview Blueprint
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blueprint Examples Modal -->
+        <div id="blueprint-examples-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="blueprint-examples-title">Blueprint Examples</h3>
+                    <button class="close-btn">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="blueprint-examples-content">
+                    <!-- Blueprint examples will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- Add Blueprint Modal -->
+<div id="add-blueprint-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Add Blueprint to Course</h2>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="search-container">
+                <div class="search-input">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search blueprints..." id="blueprint-search-input">
+                </div>
+            </div>
+            <div class="blueprint-selection-list">
+                <!-- Blueprints will be dynamically loaded here -->
+                <div class="blueprint-item" data-blueprint-id="ordering-food">
+                    <h3>Ordering at a Café – Past Tense & Politeness</h3>
+                    <p>Practice ordering food and drinks while using past tense questions and polite request forms.</p>
+                    <button class="primary-btn select-blueprint-btn">Select</button>
+                </div>
+                <div class="blueprint-item" data-blueprint-id="hotel-checkin">
+                    <h3>Hotel Check-in Conversation</h3>
+                    <p>Learn to check into a hotel, ask about amenities, and handle booking issues.</p>
+                    <button class="primary-btn select-blueprint-btn">Select</button>
+                </div>
+                <div class="blueprint-item" data-blueprint-id="job-interview">
+                    <h3>Job Interview Role-Play</h3>
+                    <p>Practice common job interview questions and responses in English.</p>
+                    <button class="primary-btn select-blueprint-btn">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
